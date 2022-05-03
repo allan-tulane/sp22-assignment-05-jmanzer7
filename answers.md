@@ -33,14 +33,21 @@ i++
 y = x - 2^k
 greedy(y)
 
+- **1b.**
+
+For a number $43, the number of iterations would be log_2^43
+
+The work and span for the algorithm would be O(log_2^n)
 
 - **2a.**
 
-Given a random number like 29, we would know how to calculate the optimal number of tokens using geometrica, show how geometrica would solve it. Because we don't know the denominations, we have no base value to comapre it to (ex. 2^k)
-
-
+Given a random number like 29, we would know how to calculate the optimal number of tokens using geometrica, show how geometrica would solve it. Because we don't know the denominations, we have no base value to compare it to (ex. 2^k). For example, using a random number 5, there could be the currency of denomination 5, and there would be 1 coin used, whereas the algorithm from part 1 would return 2 tokens. This is not optimal.
 
 - **2b.**
 
+Using the bottom-up approach, work and span are O(N*k),
 
+- **3a.**
+
+The optimal substructure for this problem is found in the first else statement of the MED function, if (S[0] == T[0]) then it would be (MED(S[1:], T[1:])). Otherwise, it would be (1 + min(MED(S, T[1:]), MED(S[1:], T)))
 

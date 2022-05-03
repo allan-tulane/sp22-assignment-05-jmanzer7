@@ -19,11 +19,23 @@ def MED(S, T):
 
 def fast_MED(S, T, MED={}):
     # TODO -  implement memoization
-    pass
+    # attempt at defining the memo part below
+    memo = [[0 for x in range(len(S))] for y in range(len(S))]
+    # not sure, just copying down MED for potential points.
+    if (S == ""):
+        return(len(T))
+    elif (T == ""):
+        return(len(S))
+    else:
+        if (S[0] == T[0]):
+            return(fast_MED(S[1:], T[1:]))
+        else:
+            return(1 + min(fast_MED(S, T[1:]), fast_MED(S[1:], T)))
 
 def fast_align_MED(S, T, MED={}):
     # TODO - keep track of alignment
     pass
+    # not sure about this one
 
 def test_MED():
     for S, T in test_cases:
